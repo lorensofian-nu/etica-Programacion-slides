@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Sofía — Introducción: la ética detrás del código</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="global.css">
+<style>
+  .speaker-badge { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 999px; border: 2px solid var(--accent-4-deep); background: var(--bg-peach-soft); font-family: var(--font-heading); font-weight: 600; font-size: 18px; color: var(--ink); box-shadow: var(--shadow-soft); }
+  .speaker-badge .material-icons { color: var(--accent-4-deep); font-size: 20px; }
+  .big-card { border: 2px solid var(--accent); background: var(--bg-soft); border-radius: 22px; padding: 22px 24px; }
+  .mini-title { font-family: var(--font-heading); font-weight: 600; color: var(--ink); display: inline-flex; align-items: center; gap: 8px; }
+  .mini-title .material-icons { font-size: 22px; color: var(--accent-deep); }
+  .sub-card { background: #FFFFFF; border: 1.5px dashed var(--accent); border-radius: 14px; padding: 14px 16px; }
+  .bullet-row { display: flex; align-items: flex-start; gap: 10px; font-family: var(--font-body); font-size: 17px; color: var(--primary); line-height: 1.5; }
+  .bullet-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); display: inline-block; margin-top: 9px; flex-shrink: 0; }
+  .small-card { border-radius: 22px; padding: 18px; }
+  .small-card .mini-title .material-icons { font-size: 20px; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <!-- Decoraciones -->
+  <div class="corner-decor" style="background: var(--accent); top:0; left:0;" data-decor aria-hidden="true"></div>
+  <div class="corner-decor" style="background: var(--accent-3); bottom:0; right:0;" data-decor aria-hidden="true"></div>
+  <span class="sparkle" style="top:90px; right:90px; font-size:26px;" data-decor aria-hidden="true">✨</span>
+  <span class="sparkle" style="bottom:80px; left:50px; font-size:26px;" data-decor aria-hidden="true">🌸</span>
+
+  <!-- HEADER -->
+  <div style="position: relative; z-index: 5;">
+    <div class="flex items-center justify-between" style="margin-bottom: 10px;">
+      <span class="chip chip-slate" style="font-size:16px;"># 01 · INTRODUCCIÓN 🌟</span>
+      <span class="speaker-badge">
+        <span class="material-icons">person</span>
+        🎤 Sofía · Líder 💖
+      </span>
+    </div>
+    <h1 class="k-title" style="font-size: 46px; line-height: 1.1; color: var(--ink);">La ética detrás del código 🌈</h1>
+    <div class="squiggle" style="width: 240px; margin-top: 6px;" data-decor aria-hidden="true"></div>
+    <p class="k-sub" style="font-size: 19px; color: var(--primary-soft); line-height: 1.45; max-width: 900px; margin-top: 10px;">
+      Somos el grupo: Sofía, Nicol, Sebastián, Deiby, Dilan, Stiven y Carlos. Hoy hablaremos sobre la ética en la programación, un tema muchas veces invisible pero fundamental. 🌱
+    </p>
+  </div>
+
+  <!-- BODY grid 60/40 -->
+  <div class="flex flex-row gap-5" style="position: relative; z-index: 5; margin-top: 18px; flex: 1; min-height: 0;">
+    <!-- LEFT 60% -->
+    <div class="big-card" style="flex: 0 0 60%; display: flex; flex-direction: column; gap: 12px;">
+      <span class="mini-title" style="font-size: 22px;">
+        <span class="material-icons">code</span>
+        Más allá del código 💻
+      </span>
+      <p style="font-family: var(--font-body); font-size: 18px; color: var(--primary); line-height: 1.5;">
+        Cuando pensamos en un programador, imaginamos a alguien que escribe código y crea sistemas. Pero su trabajo implica mucho más: cada vez que desarrolla un sistema, toma decisiones que afectan a otras personas. 🌸
+      </p>
+      <div class="sub-card">
+        <div class="mini-title" style="font-size: 17px; color: var(--accent-deep); margin-bottom: 10px;">
+          <span class="material-icons" style="font-size:18px; color: var(--accent-deep);">psychology</span>
+          ¿Qué decide un programador? 🤔
+        </div>
+        <div class="flex flex-col gap-2">
+          <div class="bullet-row"><span class="bullet-dot"></span><span>Qué información solicita una aplicación. 📋</span></div>
+          <div class="bullet-row"><span class="bullet-dot"></span><span>Cómo se protegen los datos de los usuarios. 🔐</span></div>
+          <div class="bullet-row"><span class="bullet-dot"></span><span>Qué funciones tendrá cada persona. ⚙️</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT 40% — 2 stacked cards -->
+    <div class="flex flex-col" style="flex: 1 1 0; gap: 12px;">
+      <div class="card-mint small-card" style="border: 2px solid var(--accent-2);">
+        <div class="mini-title" style="font-size: 18px; margin-bottom: 6px;">
+          <span class="material-icons" style="color: var(--accent-2-deep);">warning</span>
+          Pequeñas decisiones, gran impacto ⚠️
+        </div>
+        <p style="font-family: var(--font-body); font-size: 16px; color: var(--primary); line-height: 1.5;">
+          Un error puede comprometer la privacidad de miles de usuarios o generar discriminación. 🌍
+        </p>
+      </div>
+      <div class="card-lav small-card" style="border: 2px solid var(--accent-3);">
+        <div class="mini-title" style="font-size: 18px; margin-bottom: 6px;">
+          <span class="material-icons" style="color: var(--accent-3-deep);">favorite</span>
+          Hacer lo correcto 💖
+        </div>
+        <p style="font-family: var(--font-body); font-size: 16px; color: var(--primary); line-height: 1.5;">
+          Un programador no solo debe preguntarse si su código funciona, sino si está haciendo lo correcto. ✨
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="page-meta">
+    <span>🌸 La ética en la programación · Sofía</span>
+    <span>02 / 09 ✨</span>
+  </div>
+</div>
+</body>
+</html>

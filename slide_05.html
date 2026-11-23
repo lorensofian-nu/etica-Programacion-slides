@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Deiby — Justicia e igualdad en el software</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="global.css">
+<style>
+  .speaker-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 999px;
+    border: 2px solid var(--accent-3-deep);
+    background: var(--bg-lav-soft);
+    font-family: var(--font-heading);
+    font-size: 18px;
+    color: var(--ink);
+    font-weight: 600;
+    box-shadow: var(--shadow-cute);
+  }
+  .mini-title { font-family: var(--font-heading); font-weight: 600; color: var(--ink); display: inline-flex; align-items: center; gap: 8px; }
+  .body-text { font-family: var(--font-body); color: var(--primary); line-height: 1.55; }
+  .quote-italic-lav { font-family: var(--font-heading); font-size: 17px; font-style: italic; color: var(--accent-3-deep); font-weight: 500; line-height: 1.45; }
+  .quote-italic-mint { font-family: var(--font-heading); font-size: 16px; font-style: italic; color: var(--accent-2-deep); font-weight: 600; }
+  .pillar-card {
+    background: #FFFFFF;
+    border-radius: 18px;
+    padding: 12px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    box-shadow: var(--shadow-soft);
+  }
+  .pillar-label { font-family: var(--font-mono); font-size: 13px; color: var(--primary-soft); letter-spacing: 0.05em; font-weight: 700; }
+  .pillar-keyword { font-family: var(--font-heading); font-size: 16px; color: var(--ink); font-weight: 600; text-align: center; line-height: 1.2; }
+  .squiggle-line { display:block; height: 10px; width: 240px; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 10'><path d='M0 5 Q 7.5 0 15 5 T 30 5 T 45 5 T 60 5' fill='none' stroke='%236B3FA0' stroke-width='2.5' stroke-linecap='round'/></svg>"); background-repeat: repeat-x; background-size: 60px 10px; margin-top: 6px; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <!-- DECORACIONES -->
+  <div class="corner-decor" data-decor aria-hidden="true" style="top:0px; left:0px; background:#C9B6E4;"></div>
+  <div class="corner-decor" data-decor aria-hidden="true" style="bottom:0px; right:0px; background:#A8D5BA;"></div>
+  <span class="sparkle" data-decor aria-hidden="true" style="top:80px; right:90px; font-size:28px;">⚖️</span>
+  <span class="sparkle" data-decor aria-hidden="true" style="bottom:100px; left:80px; font-size:28px;">🌈</span>
+
+  <!-- HEADER -->
+  <header class="relative" style="z-index:5;">
+    <div class="flex items-center justify-between">
+      <span class="chip chip-lav"># 04 · JUSTICIA E IGUALDAD ⚖️</span>
+      <span class="speaker-pill">
+        <span class="material-icons" style="font-size:20px; color:var(--accent-3-deep);">person</span>
+        🎤 Deiby · Justicia 🌸
+      </span>
+    </div>
+    <h1 class="k-title mt-3" style="font-size:42px; line-height:1.1;">Justicia e igualdad en el software ⚖️</h1>
+    <span class="squiggle-line"></span>
+    <p class="k-sub mt-2" style="font-size:18px; max-width:920px;">Garantizar que los programas sean justos y no discriminen, especialmente con el crecimiento de la IA. 🤖</p>
+  </header>
+
+  <!-- CUERPO GRID 45/55 -->
+  <main class="grid mt-3" style="grid-template-columns: 45fr 55fr; gap: 16px; z-index:5; position:relative;">
+
+    <!-- COLUMNA IZQUIERDA -->
+    <section style="border:2px solid var(--accent-3); background: var(--bg-lav-soft); border-radius:22px; padding:16px 18px;">
+      <div class="mini-title" style="font-size:21px;">
+        <span class="material-icons" style="font-size:24px; color:var(--accent-3-deep);">smart_toy</span>
+        El reto de la IA 🤖
+      </div>
+      <p class="body-text mt-2" style="font-size:17px;">Muchos sistemas toman decisiones automáticas. Si están diseñados con criterios injustos, podrían rechazar personas por características que no deberían influir. 🌍</p>
+
+      <div class="mt-3" style="background:#FFFFFF; border:1.5px dashed var(--accent-3); border-radius:12px; padding:12px 14px;">
+        <p class="quote-italic-lav">El programador debe revisar el sistema, identificar errores y evitar que perjudiquen a grupos específicos. 🔍</p>
+      </div>
+    </section>
+
+    <!-- COLUMNA DERECHA -->
+    <section style="border:2px solid var(--accent-2); background: var(--bg-mint-soft); border-radius:22px; padding:16px 18px;">
+      <div class="flex items-center" style="gap:10px;">
+        <span class="chip chip-mint" style="font-size:14px;"># EJEMPLO 📋</span>
+        <span class="mini-title" style="font-size:21px;">Selección de personal automatizada 💼</span>
+      </div>
+      <p class="body-text mt-2" style="font-size:17px;">Una empresa usa un programa para seleccionar candidatos. Si está diseñado con criterios injustos, podría rechazar personas por características que no deberían influir en su contratación. 🚫</p>
+
+      <div class="mt-3" style="background:#FFFFFF; border:1.5px dashed var(--accent-2); border-radius:14px; padding:12px 14px;">
+        <p class="quote-italic-mint">💡 La transparencia importa</p>
+        <p class="body-text mt-1" style="font-size:16px;">Las personas deben conocer cómo se utiliza su información y cuáles son los criterios importantes que usa un sistema. 🌱</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- PILARES INFERIORES -->
+  <div class="grid grid-cols-3 mt-3" style="gap:12px; z-index:5; position:relative;">
+    <div class="pillar-card" style="border:2px solid var(--accent);">
+      <span class="material-icons" style="font-size:24px; color:var(--accent-deep);">balance</span>
+      <span class="pillar-label">IGUALDAD</span>
+      <span class="pillar-keyword">Mismas oportunidades 🌈</span>
+    </div>
+    <div class="pillar-card" style="border:2px solid var(--accent-2);">
+      <span class="material-icons" style="font-size:24px; color:var(--accent-2-deep);">visibility</span>
+      <span class="pillar-label">TRANSPARENCIA</span>
+      <span class="pillar-keyword">Criterios claros ✨</span>
+    </div>
+    <div class="pillar-card" style="border:2px solid var(--accent-3);">
+      <span class="material-icons" style="font-size:24px; color:var(--accent-3-deep);">diversity_3</span>
+      <span class="pillar-label">DIGNIDAD</span>
+      <span class="pillar-keyword">Respetar a todas 🌸</span>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="page-meta">
+    <span>🌸 La ética en la programación · Deiby</span>
+    <span>05 / 09 ✨</span>
+  </div>
+</div>
+</body>
+</html>

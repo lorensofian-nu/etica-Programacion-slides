@@ -1,0 +1,250 @@
+/* ===== Ética en la Programación — Estética Kawaii / Cuadrícula Azul ===== */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap');
+
+:root {
+  /* Palette — Grid Paper Azul (kawaii blue stationery) */
+  --bg: #D6EBF2;              /* pale celeste blue (paper) */
+  --grid-line: #5BB8D4;       /* turquoise blue grid */
+  --grid-line-soft: rgba(91, 184, 212, 0.50);
+
+  --bg-card: #FFFFFFD9;        /* translucent white card */
+  --bg-card-solid: #FFFFFF;
+  --bg-soft: #EAF4F8;          /* very soft blue panel */
+  --bg-mint-soft: #E8F5EC;
+  --bg-lav-soft: #F1E9FA;
+  --bg-peach-soft: #FFF1DC;
+
+  --primary: #1A2A4A;          /* deep navy text (strong contrast on light blue) */
+  --primary-soft: #2E4470;     /* still readable secondary */
+  --ink: #0F1E3A;              /* near-black navy for titles */
+
+  --accent: #D63A5C;            /* strong rose */
+  --accent-deep: #B02545;       /* deep rose */
+  --accent-2: #1F8A4D;          /* strong green */
+  --accent-2-deep: #145C32;     /* deep forest green */
+  --accent-3: #6B3FA0;          /* strong purple */
+  --accent-3-deep: #4A2770;     /* deep purple */
+  --accent-4: #C2680A;          /* strong orange */
+  --accent-4-deep: #8A4A08;     /* burnt orange */
+  --accent-5: #1B5A99;          /* strong sky blue */
+  --accent-5-deep: #0D3A66;     /* deep navy */
+
+  --line: #B9D9E5;
+  --shadow-soft: 0 4px 14px rgba(26, 42, 74, 0.10);
+  --shadow-cute: 0 6px 22px rgba(13, 58, 102, 0.18);
+
+  /* Typography tokens — GRANDE para proyección TV */
+  --font-heading: 'Fredoka', 'Nunito', sans-serif;
+  --font-body: 'Nunito', sans-serif;
+  --font-num: 'JetBrains Mono', monospace;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --fs-display: 80px;
+  --fs-h1: 58px;
+  --fs-h2: 42px;
+  --fs-h3: 30px;
+  --fs-body: 24px;
+  --fs-small: 18px;
+  --fs-micro: 16px;
+
+  --radius-cute: 22px;
+  --radius-pill: 999px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--primary);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* SLIDE ROOT — kawaii grid paper background */
+.slide {
+  width: 1280px;
+  height: 720px;
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(var(--grid-line-soft) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line-soft) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-position: 0 0;
+  padding: 52px 68px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Decorative wobbly tape stickers (used sparingly) */
+.tape {
+  position: absolute;
+  width: 110px;
+  height: 28px;
+  background: rgba(242, 214, 160, 0.7);
+  transform: rotate(-6deg);
+  border-radius: 4px;
+  z-index: 0;
+}
+
+/* Decorative squiggly underline */
+.squiggle {
+  display: inline-block;
+  height: 10px;
+  width: 100%;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 10'><path d='M0 5 Q 7.5 0 15 5 T 30 5 T 45 5 T 60 5' fill='none' stroke='%23F2A0A8' stroke-width='2.5' stroke-linecap='round'/></svg>");
+  background-repeat: repeat-x;
+  background-size: 60px 10px;
+}
+
+/* Card surfaces — soft, rounded, gentle shadow */
+.card {
+  background: var(--bg-card-solid);
+  border: 2px solid var(--line);
+  border-radius: var(--radius-cute);
+  padding: 22px;
+  box-shadow: var(--shadow-soft);
+  position: relative;
+}
+
+.card-soft {
+  background: var(--bg-soft);
+  border-radius: var(--radius-cute);
+  padding: 22px;
+  border: 2px dashed var(--accent);
+}
+
+.card-mint  { background: var(--bg-mint-soft); border-radius: var(--radius-cute); padding: 22px; border: 2px solid var(--accent-2); }
+.card-lav   { background: var(--bg-lav-soft);  border-radius: var(--radius-cute); padding: 22px; border: 2px solid var(--accent-3); }
+.card-peach { background: var(--bg-peach-soft); border-radius: var(--radius-cute); padding: 22px; border: 2px solid var(--accent-4); }
+
+/* Accent chips — pill shaped, very rounded */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1.5px solid transparent;
+}
+
+.chip-coral  { background: rgba(214, 58, 92, 0.18); color: var(--accent-deep); border-color: var(--accent); }
+.chip-mint   { background: rgba(31, 138, 77, 0.18); color: var(--accent-2-deep); border-color: var(--accent-2); }
+.chip-lav    { background: rgba(107, 63, 160, 0.18); color: var(--accent-3-deep); border-color: var(--accent-3); }
+.chip-peach  { background: rgba(194, 104, 10, 0.18); color: var(--accent-4-deep); border-color: var(--accent-4); }
+.chip-sky    { background: rgba(27, 90, 153, 0.18); color: var(--accent-5-deep); border-color: var(--accent-5); }
+.chip-slate  { background: rgba(45, 27, 78, 0.12); color: var(--primary); border-color: var(--primary-soft); }
+
+/* Accent dots / circles — kawaii style */
+.dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+
+/* Sparkle decorations */
+.sparkle {
+  position: absolute;
+  font-size: 24px;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+/* Page meta footer */
+.page-meta {
+  position: absolute;
+  bottom: 22px;
+  left: 68px;
+  right: 68px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  color: var(--primary-soft);
+  letter-spacing: 0.05em;
+  z-index: 5;
+}
+
+/* Numbered marker (top-right) */
+.page-num {
+  position: absolute;
+  top: 28px;
+  right: 68px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-micro);
+  color: var(--primary-soft);
+  letter-spacing: 0.1em;
+  z-index: 5;
+}
+
+/* Tag — code-style */
+.tag {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  padding: 3px 10px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--primary);
+  border: 1.5px solid var(--line);
+}
+
+/* Kawaii corner decorations */
+.corner-decor {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  filter: blur(28px);
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Hidden speaker notes */
+[data-notes] { display: none; }
+
+/* Material icons */
+.material-icons { font-size: inherit; line-height: inherit; vertical-align: middle; }
+
+/* Big kawaii heading (use inline) */
+.k-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+.k-sub {
+  font-family: var(--font-body);
+  color: var(--primary-soft);
+  line-height: 1.5;
+}
+
+/* Emphasized inline */
+.k-em { color: var(--accent-deep); font-weight: 700; }
+.k-em-mint { color: var(--accent-2-deep); font-weight: 700; }
+.k-em-lav { color: var(--accent-3-deep); font-weight: 700; }
+.k-em-peach { color: var(--accent-4-deep); font-weight: 700; }
+
+/* Numbered badge (used in cards) */
+.badge-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 18px;
+  color: #FFFFFF;
+}
+.badge-coral  { background: var(--accent-deep); }
+.badge-mint   { background: var(--accent-2-deep); }
+.badge-lav    { background: var(--accent-3-deep); }
+.badge-peach  { background: var(--accent-4-deep); }
+.badge-sky    { background: var(--accent-5-deep); }

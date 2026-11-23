@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Nicol — Principios éticos del programador</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="global.css">
+<style>
+  .speaker-badge { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 999px; border: 2px solid var(--accent-2-deep); background: var(--bg-mint-soft); font-family: var(--font-heading); font-weight: 600; font-size: 18px; color: var(--ink); box-shadow: var(--shadow-soft); }
+  .speaker-badge .material-icons { color: var(--accent-2-deep); font-size: 20px; }
+  .principle-card { border-radius: 22px; padding: 18px 20px; display: flex; flex-direction: column; gap: 8px; }
+  .principle-head { display: flex; align-items: center; gap: 12px; }
+  .principle-num { width: 40px; height: 40px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-family: var(--font-mono); font-weight: 700; font-size: 15px; color: #FFFFFF; flex-shrink: 0; }
+  .principle-icon { font-size: 26px; }
+  .principle-title { font-family: var(--font-heading); font-weight: 600; font-size: 22px; color: var(--ink); line-height: 1.15; }
+  .principle-desc { font-family: var(--font-body); font-size: 17px; color: var(--primary); line-height: 1.5; }
+</style>
+</head>
+<body>
+<div class="slide">
+  <!-- Decoraciones -->
+  <div class="corner-decor" style="background: var(--accent-4); top:0; left:0;" data-decor aria-hidden="true"></div>
+  <div class="corner-decor" style="background: var(--accent); bottom:0; right:0;" data-decor aria-hidden="true"></div>
+  <span class="sparkle" style="top:60px; right:80px; font-size:26px;" data-decor aria-hidden="true">✨</span>
+  <span class="sparkle" style="bottom:80px; left:50px; font-size:26px;" data-decor aria-hidden="true">🌸</span>
+
+  <!-- HEADER -->
+  <div style="position: relative; z-index: 5;">
+    <div class="flex items-center justify-between" style="margin-bottom: 10px;">
+      <span class="chip chip-coral" style="font-size:16px;"># 02 · FUNDAMENTOS 🌟</span>
+      <span class="speaker-badge">
+        <span class="material-icons">person</span>
+        🎤 Nicol · Principios 🌿
+      </span>
+    </div>
+    <h1 class="k-title" style="font-size: 42px; line-height: 1.1; color: var(--ink);">Principios éticos del código 💖</h1>
+    <p class="k-sub" style="font-size: 18px; color: var(--primary-soft); line-height: 1.45; max-width: 900px; margin-top: 10px;">
+      La ética se basa en aplicar valores y principios al desarrollar software. Un buen programador no se mide solo por su capacidad técnica. 🌱
+    </p>
+  </div>
+
+  <!-- BODY grid 2x2 -->
+  <div class="grid grid-cols-2 gap-4" style="position: relative; z-index: 5; margin-top: 18px; flex: 1; min-height: 0;">
+
+    <!-- Card 1: Responsabilidad (coral) -->
+    <div class="principle-card" style="background: var(--bg-soft); border: 2px solid var(--accent);">
+      <div class="principle-head">
+        <span class="principle-num badge-coral">01</span>
+        <span class="material-icons principle-icon" style="color: var(--accent-deep);">shield</span>
+        <span class="principle-title">Responsabilidad 🛡️</span>
+      </div>
+      <p class="principle-desc">Hacerse cargo de las consecuencias que pueden generar sus creaciones.</p>
+    </div>
+
+    <!-- Card 2: Honestidad (mint) -->
+    <div class="principle-card" style="background: var(--bg-mint-soft); border: 2px solid var(--accent-2);">
+      <div class="principle-head">
+        <span class="principle-num badge-mint">02</span>
+        <span class="material-icons principle-icon" style="color: var(--accent-2-deep);">visibility</span>
+        <span class="principle-title">Honestidad ✨</span>
+      </div>
+      <p class="principle-desc">No engañar a los usuarios y explicar con claridad cómo funciona un sistema.</p>
+    </div>
+
+    <!-- Card 3: Respeto (lavender) -->
+    <div class="principle-card" style="background: var(--bg-lav-soft); border: 2px solid var(--accent-3);">
+      <div class="principle-head">
+        <span class="principle-num badge-lav">03</span>
+        <span class="material-icons principle-icon" style="color: var(--accent-3-deep);">favorite</span>
+        <span class="principle-title">Respeto 🌸</span>
+      </div>
+      <p class="principle-desc">Reconocer los derechos de las personas y proteger su información.</p>
+    </div>
+
+    <!-- Card 4: Justicia (peach) -->
+    <div class="principle-card" style="background: var(--bg-peach-soft); border: 2px solid var(--accent-4);">
+      <div class="principle-head">
+        <span class="principle-num badge-peach">04</span>
+        <span class="material-icons principle-icon" style="color: var(--accent-4-deep);">balance</span>
+        <span class="principle-title">Justicia ⚖️</span>
+      </div>
+      <p class="principle-desc">Crear sistemas imparciales con igualdad de oportunidades para todos.</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="page-meta">
+    <span>🌸 La ética en la programación · Nicol</span>
+    <span>03 / 09 ✨</span>
+  </div>
+</div>
+</body>
+</html>
