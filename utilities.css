@@ -1,0 +1,31 @@
+/* ===== Capa mínima de utilidades (reemplaza el CDN de Tailwind) =====
+   Solo incluye las clases que usan las diapositivas, con los mismos
+   valores que Tailwind: escala de espaciado 1 = 4px. */
+
+.flex { display: flex; }
+.flex-row { flex-direction: row; }
+.flex-col { flex-direction: column; }
+.flex-1 { flex: 1 1 0%; }
+
+.grid { display: grid; }
+.grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+
+.gap-1 { gap: 4px; }
+.gap-2 { gap: 8px; }
+.gap-3 { gap: 12px; }
+.gap-4 { gap: 16px; }
+.gap-5 { gap: 20px; }
+.gap-8 { gap: 32px; }
+
+.mt-1 { margin-top: 4px; }
+.mt-2 { margin-top: 8px; }
+.mt-3 { margin-top: 12px; }
+.mt-4 { margin-top: 16px; }
+
+.relative { position: relative; }
+.font-mono { font-family: var(--font-mono); }
