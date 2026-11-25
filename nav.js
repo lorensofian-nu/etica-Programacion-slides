@@ -1,4 +1,4 @@
-/* Slide navigation: adds prev / index / next controls to every slide. */
+/* Slide navigation: adds prev / next controls to every slide. */
 (function () {
   'use strict';
 
@@ -58,7 +58,6 @@
     nav.setAttribute('aria-label', 'Navegación entre diapositivas');
 
     nav.appendChild(makeControl('Anterior', prev, 'slide-nav-prev', 'left', 'Diapositiva anterior (←)'));
-    nav.appendChild(makeControl('Índice', 'index.html', 'slide-nav-home', null, 'Volver al índice (Esc)'));
 
     var nextControl = makeControl('Siguiente', next, 'slide-nav-next', 'right', 'Diapositiva siguiente (→)');
     nav.appendChild(nextControl);
@@ -96,8 +95,8 @@
         window.location.href = slideFile(number - 1);
       } else if (event.key === 'ArrowRight' && number < TOTAL) {
         window.location.href = slideFile(number + 1);
-      } else if (event.key === 'Escape' || event.key === 'Home') {
-        window.location.href = 'index.html';
+      } else if (event.key === 'Home' && number > 1) {
+        window.location.href = slideFile(1);
       }
     });
   }

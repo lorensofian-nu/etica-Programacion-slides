@@ -6,7 +6,7 @@ Presentación de 9 diapositivas en HTML/CSS/JS sobre ética en la programación:
 
 | Archivo | Contenido |
 | --- | --- |
-| `index.html` | Portada / índice de la presentación |
+| `index.html` | Redirección directa a la portada (`slide_01.html`) |
 | `slide_01.html` | Portada del tema |
 | `slide_02.html` | Introducción (Sofía) |
 | `slide_03.html` | Principios éticos (Nicol) |
@@ -28,7 +28,7 @@ Archivos de soporte:
 
 ## Uso
 
-No requiere instalación ni build. Se puede abrir `index.html` directamente en el navegador o servirlo localmente:
+No requiere instalación ni build. Se puede abrir `slide_01.html` (o `index.html`) directamente en el navegador o servirlo localmente:
 
 ```bash
 python3 -m http.server 8000
@@ -38,7 +38,7 @@ python3 -m http.server 8000
 ### Navegación
 
 - `→` / `←`: siguiente / anterior.
-- `Esc` o `Home`: volver al índice.
+- `Home`: volver a la portada (`slide_01.html`).
 - El quiz se resuelve tocando una opción; la respuesta correcta se revela al instante.
 
 ### Proyección

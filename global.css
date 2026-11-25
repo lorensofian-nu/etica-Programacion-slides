@@ -57,23 +57,23 @@
 body {
   font-family: var(--font-body);
   color: var(--primary);
-  background: var(--bg);
-  -webkit-font-smoothing: antialiased;
-}
-
-/* SLIDE ROOT — kawaii grid paper background */
-.slide {
-  width: 1280px;
-  height: 720px;
   background-color: var(--bg);
   background-image:
     linear-gradient(var(--grid-line-soft) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid-line-soft) 1px, transparent 1px);
   background-size: 32px 32px;
   background-position: 0 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* SLIDE ROOT — transparent so full-viewport grid paper fills any aspect ratio */
+.slide {
+  width: 1280px;
+  height: 720px;
+  background: transparent;
   padding: 46px 68px 70px;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   display: flex;
   flex-direction: column;
 }
