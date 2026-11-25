@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>La ética en la programación — Índice</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
   <meta name="description" content="Presentación sobre la ética en la programación: privacidad, justicia, ambiente y responsabilidad en el código.">
   <link rel="stylesheet" href="global.css">
   <link rel="stylesheet" href="nav.css">
@@ -258,6 +259,7 @@
   <script>
     document.addEventListener('keydown', function (event) {
       if (event.metaKey || event.ctrlKey || event.altKey) return;
+      if (event.target.closest && event.target.closest('a, button, input, textarea, select')) return;
       if (event.key === 'ArrowRight' || event.key === 'Enter') {
         window.location.href = 'slide_01.html';
       }

@@ -2,11 +2,12 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dinámica — Quiz ético interactivo</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
   <link rel="stylesheet" href="global.css">
+  <link rel="stylesheet" href="utilities.css">
   <link rel="stylesheet" href="nav.css">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <style>
     /* === HEADER TEAM BADGE === */
     .team-badge {
@@ -21,7 +22,7 @@
     .team-badge .material-icons { color: var(--accent-5-deep); font-size: 20px; }
     .team-badge-text {
       font-family: var(--font-heading);
-      font-size: 16px;
+      font-size: 17px;
       color: var(--ink);
       font-weight: 600;
     }
@@ -30,10 +31,10 @@
     .quiz-card {
       background: var(--bg-card-solid);
       border-radius: 22px;
-      padding: 16px 16px 14px 16px;
+      padding: 14px 15px 13px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 8px;
       box-shadow: var(--shadow-cute);
       height: 100%;
     }
@@ -57,51 +58,57 @@
     }
     .qc-cat {
       font-family: var(--font-mono);
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 700;
       padding: 4px 9px;
       border-radius: 999px;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
       line-height: 1;
     }
-    .qc-emoji { font-size: 18px; margin-left: auto; line-height: 1; }
+    .qc-emoji { font-size: 20px; margin-left: auto; line-height: 1; }
     .qc-scenario {
       font-family: var(--font-heading);
-      font-size: 16px;
+      font-size: 17px;
       color: var(--ink);
-      line-height: 1.4;
+      line-height: 1.38;
       font-weight: 500;
     }
     .qc-question {
       font-family: var(--font-heading);
       font-style: italic;
-      font-size: 15px;
+      font-size: 16px;
       color: var(--accent-deep);
       font-weight: 600;
       line-height: 1.3;
       border-left: 3px dashed var(--accent);
       padding-left: 10px;
     }
-    .qc-options { display: flex; flex-direction: column; gap: 7px; }
+    .qc-options { display: flex; flex-direction: column; gap: 6px; }
     .qc-opt {
       display: flex;
       align-items: flex-start;
       gap: 8px;
       font-family: var(--font-body);
-      font-size: 14px;
+      font-size: 16px;
       color: var(--primary);
       line-height: 1.35;
+      cursor: pointer;
+      border-radius: 10px;
+      padding: 3px 6px;
+      margin: -3px -6px;
+      transition: background 0.18s ease, box-shadow 0.18s ease, transform 0.15s ease;
+      user-select: none;
     }
     .qc-letter {
-      width: 24px;
-      height: 24px;
+      width: 26px;
+      height: 26px;
       border-radius: 50%;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       font-family: var(--font-mono);
-      font-size: 12px;
+      font-size: 13px;
       color: #FFFFFF;
       font-weight: 700;
       flex-shrink: 0;
@@ -121,7 +128,7 @@
       align-items: center;
       gap: 4px;
       font-family: var(--font-mono);
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 700;
       padding: 4px 10px;
       border-radius: 999px;
@@ -130,25 +137,20 @@
     .qc-justif {
       font-family: var(--font-heading);
       font-style: italic;
-      font-size: 12.5px;
+      font-size: 14px;
       line-height: 1.35;
       font-weight: 500;
     }
 
     /* === INTERACTIVE QUIZ === */
-    .qc-opt {
-      cursor: pointer;
-      border-radius: 10px;
-      padding: 4px 6px;
-      margin: -4px -6px;
-      transition: background 0.18s ease, box-shadow 0.18s ease, transform 0.15s ease;
-      user-select: none;
-    }
     .qc-opt:hover,
     .qc-opt:focus-visible {
       background: rgba(27, 90, 153, 0.08);
       transform: translateX(2px);
       outline: none;
+    }
+    .qc-opt:focus-visible {
+      box-shadow: inset 0 0 0 2px var(--accent-5);
     }
     .qc-opt.is-correct {
       background: rgba(31, 138, 77, 0.14);
@@ -163,26 +165,12 @@
       margin-left: auto;
       padding-left: 6px;
       font-weight: 700;
-      font-size: 14px;
+      font-size: 16px;
       line-height: 1.25;
       flex-shrink: 0;
     }
     .qc-opt.is-correct .qc-mark { color: var(--accent-2-deep); }
     .qc-opt.is-wrong .qc-mark { color: var(--accent-deep); }
-
-    .qc-hint {
-      margin-top: auto;
-      padding-top: 8px;
-      border-top: 1.5px dashed var(--line);
-      font-family: var(--font-mono);
-      font-size: 11.5px;
-      font-weight: 700;
-      letter-spacing: 0.03em;
-      color: var(--accent-5-deep);
-      text-align: center;
-      animation: qcPulse 1.8s ease-in-out infinite;
-    }
-    .quiz-card.revealed .qc-hint { display: none; }
 
     .qc-answer { display: none; }
     .quiz-card.revealed .qc-answer {
@@ -190,20 +178,28 @@
       animation: qcReveal 0.3s ease-out;
     }
     .quiz-card.revealed .qc-opt { cursor: default; }
-    .quiz-card.revealed .qc-opt:hover {
+    .quiz-card.revealed .qc-opt:hover,
+    .quiz-card.revealed .qc-opt:focus-visible {
       background: transparent;
+      box-shadow: none;
       transform: none;
     }
-    .quiz-card.revealed .qc-opt.is-correct:hover { background: rgba(31, 138, 77, 0.14); }
-    .quiz-card.revealed .qc-opt.is-wrong:hover { background: rgba(214, 58, 92, 0.10); }
+    .quiz-card.revealed .qc-opt.is-correct,
+    .quiz-card.revealed .qc-opt.is-correct:hover,
+    .quiz-card.revealed .qc-opt.is-correct:focus-visible {
+      background: rgba(31, 138, 77, 0.14);
+      box-shadow: inset 0 0 0 1.5px var(--accent-2);
+    }
+    .quiz-card.revealed .qc-opt.is-wrong,
+    .quiz-card.revealed .qc-opt.is-wrong:hover,
+    .quiz-card.revealed .qc-opt.is-wrong:focus-visible {
+      background: rgba(214, 58, 92, 0.10);
+      box-shadow: inset 0 0 0 1.5px var(--accent);
+    }
 
     @keyframes qcReveal {
       from { opacity: 0; transform: translateY(6px); }
       to   { opacity: 1; transform: none; }
-    }
-    @keyframes qcPulse {
-      0%, 100% { opacity: 0.55; }
-      50%      { opacity: 1; }
     }
 
     /* color variants */
@@ -233,7 +229,7 @@
     .bottom-bar .material-icons { color: var(--accent-deep); font-size: 22px; flex-shrink: 0; }
     .bottom-bar p {
       font-family: var(--font-mono);
-      font-size: 13px;
+      font-size: 14px;
       color: var(--primary);
       font-weight: 600;
       line-height: 1.3;
@@ -243,13 +239,13 @@
 <body>
   <div class="slide">
     <!-- Decorative corner blobs (z-index 0) -->
-    <div class="corner-decor" style="background: rgba(214,58,92,0.55); top:0; right:0;" aria-hidden="true" data-decor></div>
-    <div class="corner-decor" style="background: rgba(107,63,160,0.55); bottom:0; left:0;" aria-hidden="true" data-decor></div>
+    <div class="corner-decor" style="background: var(--accent); top:0; right:0;" aria-hidden="true" data-decor></div>
+    <div class="corner-decor" style="background: var(--accent-3); bottom:0; left:0;" aria-hidden="true" data-decor></div>
 
     <!-- Sparkles -->
-    <div class="sparkle" style="top:80px; left:80px; font-size: 26px;" aria-hidden="true" data-decor>❓</div>
-    <div class="sparkle" style="top:60px; right:140px; font-size: 24px;" aria-hidden="true" data-decor>✨</div>
-    <div class="sparkle" style="bottom:100px; right:60px; font-size: 24px;" aria-hidden="true" data-decor>🎯</div>
+    <div class="sparkle" style="top:46px; left:400px; font-size: 24px;" aria-hidden="true" data-decor>❓</div>
+    <div class="sparkle" style="top:46px; right:300px; font-size: 24px;" aria-hidden="true" data-decor>✨</div>
+    <div class="sparkle" style="bottom:86px; right:22px; font-size: 24px;" aria-hidden="true" data-decor>🎯</div>
 
     <!-- HEADER (compacto) -->
     <header style="position:relative; z-index:5;">
@@ -260,14 +256,11 @@
           <span class="team-badge-text">🤝 Todo el equipo</span>
         </div>
       </div>
-      <h1 class="k-title" style="font-size: 34px; margin-top: 8px;">Quiz: ¿Qué harías tú? 🤔</h1>
-      <p class="k-sub" style="font-size: 16px; margin-top: 4px; max-width: 1000px;">
-        Elige una opción y la respuesta correcta se revela al instante con su principio ético. ✨
-      </p>
+      <h1 class="k-title" style="font-size: 36px; margin-top: 6px;">Quiz: ¿Qué harías tú? 🤔</h1>
     </header>
 
     <!-- 3-COLUMN QUIZ GRID -->
-    <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-top: 14px; position:relative; z-index:5;">
+    <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-top: 12px; position:relative; z-index:5;">
 
       <!-- ===== PREGUNTA 1 — Coral / Privacidad ===== -->
       <div class="quiz-card" data-answer="B" style="border:3px solid var(--accent);">
@@ -292,7 +285,6 @@
             <span>Pedirlos igual, total el usuario nunca se da cuenta.</span>
           </div>
         </div>
-        <p class="qc-hint">👆 Toca una opción para ver la respuesta</p>
         <div class="qc-answer" aria-live="polite">
           <span class="qc-pill pill-coral">✓ Respuesta: B</span>
           <p class="qc-justif just-coral">Solicitar permisos solo cuando se necesitan respeta la privacidad y el principio de mínima información.</p>
@@ -322,7 +314,6 @@
             <span>Cambiar el código por el nombre del barrio, que es lo mismo.</span>
           </div>
         </div>
-        <p class="qc-hint">👆 Toca una opción para ver la respuesta</p>
         <div class="qc-answer" aria-live="polite">
           <span class="qc-pill pill-mint">✓ Respuesta: A</span>
           <p class="qc-justif just-mint">Eliminar el sesgo garantiza igualdad de oportunidades y respeta la justicia.</p>
@@ -352,7 +343,6 @@
             <span>Optimizar el código para que funcione en equipos antiguos también.</span>
           </div>
         </div>
-        <p class="qc-hint">👆 Toca una opción para ver la respuesta</p>
         <div class="qc-answer" aria-live="polite">
           <span class="qc-pill pill-peach">✓ Respuesta: C</span>
           <p class="qc-justif just-peach">Optimizar extiende la vida útil de los dispositivos y reduce residuos electrónicos.</p>
@@ -364,7 +354,7 @@
     <!-- BOTTOM BAR — facilitator instructions -->
     <div class="bottom-bar" style="position:relative; z-index:5;">
       <span class="material-icons">how_to_vote</span>
-      <p># Toca una opción · La respuesta se revela al instante · 30 seg por pregunta 🌈💖</p>
+      <p># Toca una opción · La respuesta correcta se revela al instante · 30 seg por pregunta 🌈💖</p>
     </div>
 
     <!-- FOOTER META -->
@@ -381,6 +371,11 @@
       function choose(opt) {
         if (card.classList.contains('revealed')) return;
         card.classList.add('revealed');
+        card.querySelectorAll('.qc-opt').forEach(function (item) {
+          item.setAttribute('tabindex', '-1');
+          item.setAttribute('aria-disabled', 'true');
+        });
+        opt.setAttribute('aria-pressed', 'true');
 
         var isCorrect = opt.dataset.opt === answer;
         var correctOpt = card.querySelector('.qc-opt[data-opt="' + answer + '"]');
@@ -404,11 +399,13 @@
       function mark(symbol) {
         var span = document.createElement('span');
         span.className = 'qc-mark';
+        span.setAttribute('aria-hidden', 'true');
         span.textContent = symbol;
         return span;
       }
 
       card.querySelectorAll('.qc-opt').forEach(function (opt) {
+        opt.setAttribute('aria-pressed', 'false');
         opt.addEventListener('click', function () { choose(opt); });
         opt.addEventListener('keydown', function (event) {
           if (event.key === 'Enter' || event.key === ' ') {

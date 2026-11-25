@@ -2,27 +2,13 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dilan — Ética profesional y ambiente</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
 <link rel="stylesheet" href="global.css">
+  <link rel="stylesheet" href="utilities.css">
   <link rel="stylesheet" href="nav.css">
 <style>
-  .speaker-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 20px;
-    border-radius: 999px;
-    border: 2px solid var(--accent-2-deep);
-    background: var(--bg-mint-soft);
-    font-family: var(--font-heading);
-    font-size: 18px;
-    color: var(--ink);
-    font-weight: 600;
-    box-shadow: var(--shadow-cute);
-  }
-  .mini-title { font-family: var(--font-heading); font-weight: 600; color: var(--ink); display: inline-flex; align-items: center; gap: 8px; }
   .body-text { font-family: var(--font-body); color: var(--primary); line-height: 1.55; }
   .bullet-row { display: flex; align-items: flex-start; gap: 10px; font-family: var(--font-body); font-size: 17px; color: var(--primary); line-height: 1.5; }
   .bullet-dot-mint { width: 10px; height: 10px; border-radius: 50%; background: var(--accent-2-deep); margin-top: 9px; flex-shrink: 0; }
@@ -34,18 +20,18 @@
 <body>
 <div class="slide">
   <!-- DECORACIONES -->
-  <div class="corner-decor" data-decor aria-hidden="true" style="top:0px; right:0px; background:#A8D5BA;"></div>
-  <div class="corner-decor" data-decor aria-hidden="true" style="bottom:0px; left:0px; background:#F2D6A0;"></div>
-  <span class="sparkle" data-decor aria-hidden="true" style="top:80px; left:60px; font-size:28px;">🌿</span>
-  <span class="sparkle" data-decor aria-hidden="true" style="bottom:130px; right:80px; font-size:28px;">☀️</span>
-  <span class="sparkle" data-decor aria-hidden="true" style="top:280px; right:50px; font-size:24px;">🌱</span>
+  <div class="corner-decor" data-decor aria-hidden="true" style="top:0px; right:0px; background: var(--accent-2);"></div>
+  <div class="corner-decor" data-decor aria-hidden="true" style="bottom:0px; left:0px; background: var(--accent-4);"></div>
+  <span class="sparkle" data-decor aria-hidden="true" style="top:46px; right:420px; font-size:26px;">🌿</span>
+  <span class="sparkle" data-decor aria-hidden="true" style="bottom:110px; right:90px; font-size:28px;">☀️</span>
+  <span class="sparkle" data-decor aria-hidden="true" style="top:230px; right:22px; font-size:24px;">🌱</span>
 
   <!-- HEADER -->
   <header class="relative" style="z-index:5;">
     <div class="flex items-center justify-between">
       <span class="chip chip-mint"># 05 · IMPACTO AMBIENTAL 🌍</span>
-      <span class="speaker-pill">
-        <span class="material-icons" style="font-size:20px; color:var(--accent-2-deep);">person</span>
+      <span class="speaker-badge" style="--badge-accent: var(--accent-2-deep); --badge-bg: var(--bg-mint-soft);">
+        <span class="material-icons" style="font-size:20px;">person</span>
         🎤 Dilan · Ética y ambiente 🌱
       </span>
     </div>
@@ -58,7 +44,7 @@
   <main class="grid mt-4" style="grid-template-columns: 55fr 45fr; gap: 18px; flex:1; z-index:5; position:relative;">
 
     <!-- COLUMNA IZQUIERDA -->
-    <section style="border:2px solid var(--accent-2); background: var(--bg-mint-soft); border-radius:22px; padding:20px 22px;">
+    <section style="border:2px solid var(--accent-2); background: var(--bg-mint-soft); border-radius:22px; padding:20px 22px; display:flex; flex-direction:column;">
       <div class="mini-title" style="font-size:22px;">
         <span class="material-icons" style="font-size:24px; color:var(--accent-2-deep);">eco</span>
         El software consume recursos reales 💡

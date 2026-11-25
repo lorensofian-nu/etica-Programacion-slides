@@ -2,22 +2,13 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Carlos — Programar con responsabilidad</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
   <link rel="stylesheet" href="global.css">
+  <link rel="stylesheet" href="utilities.css">
   <link rel="stylesheet" href="nav.css">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <style>
-    .speaker-badge {
-      background: rgba(214,58,92,0.10);
-      border: 2px solid var(--accent-deep);
-      border-radius: 999px;
-      padding: 10px 20px;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .speaker-badge .material-icons { color: var(--accent-deep); font-size: 22px; }
     .speaker-name {
       font-family: var(--font-heading);
       font-size: 18px;
@@ -90,28 +81,28 @@
 <body>
   <div class="slide">
     <!-- Decorative corner blobs -->
-    <div class="corner-decor" style="background: rgba(107,63,160,0.55); top:0; right:0;" aria-hidden="true"></div>
-    <div class="corner-decor" style="background: rgba(194,104,10,0.50); bottom:80px; left:0;" aria-hidden="true"></div>
+    <div class="corner-decor" style="background: var(--accent-3); top:0; right:0;" aria-hidden="true"></div>
+    <div class="corner-decor" style="background: var(--accent-4); bottom:80px; left:0;" aria-hidden="true"></div>
 
     <!-- Sparkles -->
-    <div class="sparkle" style="top:90px; left:120px; font-size: 26px;" aria-hidden="true">✨</div>
-    <div class="sparkle" style="top:220px; right:120px; font-size: 26px;" aria-hidden="true">🌟</div>
-    <div class="sparkle" style="bottom:170px; right:60px; font-size: 26px;" aria-hidden="true">💕</div>
-    <div class="sparkle" style="bottom:140px; left:80px; font-size: 26px;" aria-hidden="true">🌸</div>
+    <div class="sparkle" style="top:46px; right:360px; font-size: 26px;" aria-hidden="true">✨</div>
+    <div class="sparkle" style="top:174px; right:92px; font-size: 26px;" aria-hidden="true">🌟</div>
+    <div class="sparkle" style="bottom:96px; right:22px; font-size: 24px;" aria-hidden="true">💕</div>
+    <div class="sparkle" style="bottom:96px; left:22px; font-size: 24px;" aria-hidden="true">🌸</div>
 
     <!-- HEADER -->
     <header style="position:relative; z-index:5;">
       <div class="flex items-center justify-between">
         <span class="chip chip-peach"># 07 · CONCLUSIÓN 🌟</span>
-        <div class="speaker-badge">
+        <div class="speaker-badge" style="--badge-accent: var(--accent-deep); --badge-bg: rgba(214, 58, 92, 0.10);">
           <span class="material-icons">person</span>
           <span class="speaker-name">🎤 Carlos · Cierre 💖</span>
         </div>
       </div>
       <h1 class="k-title" style="font-size: 42px; margin-top: 12px;">Programar con responsabilidad 🌈</h1>
       <div class="squiggle" style="width: 240px; margin-top: 6px;"></div>
-      <p class="k-sub" style="font-size: 18px; margin-top: 8px; max-width: 920px;">
-        Tomar decisiones éticas es analizar consecuencias, respetar derechos y considerar el impacto social y ambiental. 🌱
+      <p class="k-sub" style="font-size: 18px; margin-top: 8px; max-width: 980px;">
+        Tomar decisiones éticas es analizar consecuencias, respetar derechos y considerar el impacto social y ambiental.&nbsp;🌱
       </p>
     </header>
 

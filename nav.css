@@ -66,23 +66,30 @@ body {
 }
 
 /* ===== Responsive slide fitting ===== */
-@media (min-width: 1281px) {
-  body:has(> .slide) {
-    display: flex;
-    align-items: safe center;
-    justify-content: center;
-  }
+body.deck-slide-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100svh;
+  background-color: #C6E1EC;
 }
 
 .slide-stage {
-  margin: 0 auto;
+  flex: none;
   overflow: hidden;
+  box-shadow: 0 12px 36px rgba(13, 58, 102, 0.16);
 }
 
 /* Mobile/tablet floating nav (outside the scaled slide) */
 .slide-nav-mobile { display: none; }
 
 @media (max-width: 1279px) {
+  /* Reserva espacio inferior para la barra flotante y que no tape el footer. */
+  body.deck-slide-page {
+    padding-bottom: 84px;
+  }
+
   .page-meta .slide-nav { display: none; }
 
   .slide-nav-mobile {

@@ -2,11 +2,12 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Stiven — ¿Cómo aplicar la ética al desarrollar?</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
   <link rel="stylesheet" href="global.css">
+  <link rel="stylesheet" href="utilities.css">
   <link rel="stylesheet" href="nav.css">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <style>
     .stage-card {
       border-radius: 18px;
@@ -43,16 +44,6 @@
       color: var(--primary-soft);
       line-height: 1.4;
     }
-    .speaker-badge {
-      background: rgba(27, 90, 153, 0.12);
-      border: 2px solid var(--accent-5-deep);
-      border-radius: 999px;
-      padding: 10px 20px;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .speaker-badge .material-icons { color: var(--accent-5-deep); font-size: 22px; }
     .speaker-name {
       font-family: var(--font-heading);
       font-size: 18px;
@@ -64,18 +55,18 @@
 <body>
   <div class="slide">
     <!-- Decorative corner blobs (z-index 0, aria-hidden) -->
-    <div class="corner-decor" style="background: rgba(27,90,153,0.55); top:0; left:0;" aria-hidden="true"></div>
-    <div class="corner-decor" style="background: rgba(214,58,92,0.55); bottom:0; right:0;" aria-hidden="true"></div>
+    <div class="corner-decor" style="background: var(--accent-5); top:0; left:0;" aria-hidden="true"></div>
+    <div class="corner-decor" style="background: var(--accent); bottom:0; right:0;" aria-hidden="true"></div>
 
     <!-- Sparkles -->
-    <div class="sparkle" style="top:90px; right:90px; font-size: 28px;" aria-hidden="true">✨</div>
-    <div class="sparkle" style="bottom:120px; left:60px; font-size: 28px;" aria-hidden="true">🌟</div>
+    <div class="sparkle" style="top:46px; right:380px; font-size: 26px;" aria-hidden="true">✨</div>
+    <div class="sparkle" style="bottom:96px; left:28px; font-size: 26px;" aria-hidden="true">🌟</div>
 
     <!-- HEADER -->
     <header style="position:relative; z-index:5;">
       <div class="flex items-center justify-between">
         <span class="chip chip-coral"># 06 · DESARROLLO 🌈</span>
-        <div class="speaker-badge">
+        <div class="speaker-badge" style="--badge-accent: var(--accent-5-deep); --badge-bg: rgba(27, 90, 153, 0.12);">
           <span class="material-icons">person</span>
           <span class="speaker-name">🎤 Stiven · Aplicación ✨</span>
         </div>
@@ -105,7 +96,7 @@
       <div class="stage-card" style="border:2px solid var(--accent); background: rgba(214,58,92,0.10);">
         <div class="stage-num badge-coral">1</div>
         <span class="material-icons stage-icon" style="color: var(--accent-deep);">calendar_today</span>
-        <h3 class="stage-title">01 · Planificación</h3>
+        <h2 class="stage-title">01 · Planificación</h2>
         <p class="stage-desc">Identificar quiénes usarán el sistema y qué riesgos podría generar.</p>
       </div>
 
@@ -113,7 +104,7 @@
       <div class="stage-card" style="border:2px solid var(--accent-2); background: var(--bg-mint-soft);">
         <div class="stage-num badge-mint">2</div>
         <span class="material-icons stage-icon" style="color: var(--accent-2-deep);">code</span>
-        <h3 class="stage-title">02 · Desarrollo</h3>
+        <h2 class="stage-title">02 · Desarrollo</h2>
         <p class="stage-desc">Escribir código seguro y respetar la privacidad.</p>
       </div>
 
@@ -121,7 +112,7 @@
       <div class="stage-card" style="border:2px solid var(--accent-3); background: var(--bg-lav-soft);">
         <div class="stage-num badge-lav">3</div>
         <span class="material-icons stage-icon" style="color: var(--accent-3-deep);">bug_report</span>
-        <h3 class="stage-title">03 · Pruebas</h3>
+        <h2 class="stage-title">03 · Pruebas</h2>
         <p class="stage-desc">Verificar que el programa no perjudique a los usuarios.</p>
       </div>
 
@@ -129,7 +120,7 @@
       <div class="stage-card" style="border:2px solid var(--accent-4); background: var(--bg-peach-soft);">
         <div class="stage-num badge-peach">4</div>
         <span class="material-icons stage-icon" style="color: var(--accent-4-deep);">rocket_launch</span>
-        <h3 class="stage-title">04 · Lanzamiento</h3>
+        <h2 class="stage-title">04 · Lanzamiento</h2>
         <p class="stage-desc">Actualizar, corregir fallos y atender problemas.</p>
       </div>
 

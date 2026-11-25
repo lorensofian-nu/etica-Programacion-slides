@@ -10,7 +10,10 @@
 
   function currentNumber() {
     var match = window.location.pathname.match(/slide[_-]?(\d+)(?:\.html)?$/i);
-    return match ? parseInt(match[1], 10) : 1;
+    if (!match) return 1;
+    var num = parseInt(match[1], 10);
+    if (isNaN(num)) return 1;
+    return Math.min(Math.max(num, 1), TOTAL);
   }
 
   function makeControl(label, href, extraClass, arrow, title) {
@@ -80,8 +83,14 @@
     document.body.appendChild(mobile);
 
     document.addEventListener('keydown', function (event) {
-      if (event.metaKey || event.ctrlKey || event.altKey) return;
-      if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement) return;
+      if (event.defaultPrevented || event.metaKey || event.ctrlKey || event.altKey) return;
+      var target = event.target;
+      if (
+        target instanceof HTMLInputElement ||
+        target instanceof HTMLTextAreaElement ||
+        target instanceof HTMLSelectElement ||
+        (target && target.isContentEditable)
+      ) return;
 
       if (event.key === 'ArrowLeft' && number > 1) {
         window.location.href = slideFile(number - 1);
@@ -93,32 +102,30 @@
     });
   }
 
+  /* Alto reservado para la barra de navegación flotante en pantallas < 1280px.
+     Debe coincidir con el padding-bottom de body.deck-slide-page en nav.css. */
+  var COMPACT_NAV_SPACE = 84;
+
   function fitSlide() {
     var slide = document.querySelector('.slide');
     if (!slide) return;
 
     var width = document.documentElement.clientWidth || window.innerWidth;
     var height = document.documentElement.clientHeight || window.innerHeight;
+    var isCompact = width < 1280;
+    var availableHeight = height - (isCompact ? COMPACT_NAV_SPACE : 0);
+    var scale = Math.min(width / 1280, availableHeight / 720);
+    scale = Math.max(scale, 0.1);
+
     var stage = slide.parentElement;
-    var scale = Math.min(width / 1280, height / 720, 1);
-    var shouldScale = scale < 1;
-
-    if (!shouldScale) {
-      if (stage && stage.classList.contains('slide-stage')) {
-        stage.parentNode.insertBefore(slide, stage);
-        stage.parentNode.removeChild(stage);
-      }
-      slide.style.transform = '';
-      slide.style.transformOrigin = '';
-      return;
-    }
-
     if (!stage || !stage.classList.contains('slide-stage')) {
       stage = document.createElement('div');
       stage.className = 'slide-stage';
       slide.parentNode.insertBefore(stage, slide);
       stage.appendChild(slide);
     }
+
+    document.body.classList.add('deck-slide-page');
 
     stage.style.width = Math.ceil(1280 * scale) + 'px';
     stage.style.height = Math.ceil(720 * scale) + 'px';
@@ -130,6 +137,7 @@
     mountNav();
     fitSlide();
     window.addEventListener('resize', fitSlide);
+    window.addEventListener('orientationchange', fitSlide);
   }
 
   if (document.readyState === 'loading') {

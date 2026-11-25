@@ -2,17 +2,14 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sofía — Introducción: la ética detrás del código</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
 <link rel="stylesheet" href="global.css">
+  <link rel="stylesheet" href="utilities.css">
   <link rel="stylesheet" href="nav.css">
 <style>
-  .speaker-badge { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 999px; border: 2px solid var(--accent-4-deep); background: var(--bg-peach-soft); font-family: var(--font-heading); font-weight: 600; font-size: 18px; color: var(--ink); box-shadow: var(--shadow-soft); }
-  .speaker-badge .material-icons { color: var(--accent-4-deep); font-size: 20px; }
   .big-card { border: 2px solid var(--accent); background: var(--bg-soft); border-radius: 22px; padding: 22px 24px; }
-  .mini-title { font-family: var(--font-heading); font-weight: 600; color: var(--ink); display: inline-flex; align-items: center; gap: 8px; }
-  .mini-title .material-icons { font-size: 22px; color: var(--accent-deep); }
   .sub-card { background: #FFFFFF; border: 1.5px dashed var(--accent); border-radius: 14px; padding: 14px 16px; }
   .bullet-row { display: flex; align-items: flex-start; gap: 10px; font-family: var(--font-body); font-size: 17px; color: var(--primary); line-height: 1.5; }
   .bullet-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); display: inline-block; margin-top: 9px; flex-shrink: 0; }
@@ -25,14 +22,14 @@
   <!-- Decoraciones -->
   <div class="corner-decor" style="background: var(--accent); top:0; left:0;" data-decor aria-hidden="true"></div>
   <div class="corner-decor" style="background: var(--accent-3); bottom:0; right:0;" data-decor aria-hidden="true"></div>
-  <span class="sparkle" style="top:90px; right:90px; font-size:26px;" data-decor aria-hidden="true">✨</span>
-  <span class="sparkle" style="bottom:80px; left:50px; font-size:26px;" data-decor aria-hidden="true">🌸</span>
+  <span class="sparkle" style="top:46px; right:310px; font-size:26px;" data-decor aria-hidden="true">✨</span>
+  <span class="sparkle" style="bottom:86px; left:22px; font-size:26px;" data-decor aria-hidden="true">🌸</span>
 
   <!-- HEADER -->
   <div style="position: relative; z-index: 5;">
     <div class="flex items-center justify-between" style="margin-bottom: 10px;">
       <span class="chip chip-slate" style="font-size:16px;"># 01 · INTRODUCCIÓN 🌟</span>
-      <span class="speaker-badge">
+      <span class="speaker-badge" style="--badge-accent: var(--accent-4-deep); --badge-bg: var(--bg-peach-soft);">
         <span class="material-icons">person</span>
         🎤 Sofía · Líder 💖
       </span>

@@ -1,5 +1,6 @@
 /* ===== Ética en la Programación — Estética Kawaii / Cuadrícula Azul ===== */
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap');
+/* Fuentes e iconos autoalojados: funcionan sin conexión. */
+@import url('fonts.css');
 
 :root {
   /* Palette — Grid Paper Azul (kawaii blue stationery) */
@@ -70,7 +71,7 @@ body {
     linear-gradient(90deg, var(--grid-line-soft) 1px, transparent 1px);
   background-size: 32px 32px;
   background-position: 0 0;
-  padding: 52px 68px;
+  padding: 46px 68px 70px;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -93,7 +94,7 @@ body {
   display: inline-block;
   height: 10px;
   width: 100%;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 10'><path d='M0 5 Q 7.5 0 15 5 T 30 5 T 45 5 T 60 5' fill='none' stroke='%23F2A0A8' stroke-width='2.5' stroke-linecap='round'/></svg>");
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 10'><path d='M0 5 Q 7.5 0 15 5 T 30 5 T 45 5 T 60 5' fill='none' stroke='%23D63A5C' stroke-width='2.5' stroke-linecap='round'/></svg>");
   background-repeat: repeat-x;
   background-size: 60px 10px;
 }
@@ -150,6 +151,7 @@ body {
   font-size: 24px;
   pointer-events: none;
   opacity: 0.7;
+  z-index: 1;
 }
 
 /* Page meta footer */
@@ -198,7 +200,7 @@ body {
   height: 80px;
   border-radius: 50%;
   filter: blur(28px);
-  opacity: 0.55;
+  opacity: 0.4;
   pointer-events: none;
   z-index: 0;
 }
@@ -248,3 +250,49 @@ body {
 .badge-lav    { background: var(--accent-3-deep); }
 .badge-peach  { background: var(--accent-4-deep); }
 .badge-sky    { background: var(--accent-5-deep); }
+
+/* ===== Componentes compartidos (misma métrica en todas las diapositivas) ===== */
+.speaker-badge {
+  --badge-accent: var(--accent-deep);
+  --badge-bg: var(--bg-peach-soft);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--badge-accent);
+  background: var(--badge-bg);
+  font-family: var(--font-heading);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--ink);
+  box-shadow: var(--shadow-soft);
+  white-space: nowrap;
+}
+.speaker-badge .material-icons { color: var(--badge-accent); font-size: 20px; }
+
+.mini-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.2;
+}
+.mini-title .material-icons { color: var(--accent-deep); font-size: 22px; }
+
+/* Ajustes de ajuste de texto: solo donde hay contenedores flex/grid. */
+.slide :where(.flex, .grid) > * { min-width: 0; }
+
+.slide :where(h1, h2, h3, h4, p, span, a, li, dt, dd) {
+  overflow-wrap: break-word;
+}
+
+.slide :where(.card, .card-soft, .card-mint, .card-lav, .card-peach,
+  .big-card, .small-card, .principle-card, .pillar-card, .stage-card,
+  .quote-card, .quiz-card) {
+  max-width: 100%;
+}
+
